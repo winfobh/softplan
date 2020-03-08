@@ -52,3 +52,8 @@
 /home/warlem/dotnet/softplan/obj/Debug/netcoreapp3.1/softplan.csproj.CopyComplete
 /home/warlem/dotnet/softplan/obj/Debug/netcoreapp3.1/softplan.dll
 /home/warlem/dotnet/softplan/obj/Debug/netcoreapp3.1/softplan.pdb
+/home/warlem/dotnet/softplan/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/home/warlem/dotnet/softplan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/home/warlem/dotnet/softplan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/warlem/dotnet/softplan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/warlem/dotnet/softplan/obj/Debug/netcoreapp3.1/softplan.MvcApplicationPartsAssemblyInfo.cs

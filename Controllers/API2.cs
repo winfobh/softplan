@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
+using System.Net;
 using softplan.Controllers;
 using System;
 
@@ -18,8 +18,22 @@ namespace softplan.Controllers
             var res = valorInicial * math;
             
             return res.ToString("00.00");
-        }
+        }       
+    }
 
-        
+
+    [ApiController]
+    [Route("showmethecode")]
+    public class MostreMeOCodigo
+    {
+
+        [HttpGet]
+        public ContentResult ShowMeTheCode()
+        {
+            return new ContentResult {
+                ContentType = "text/html",
+                StatusCode = (int)HttpStatusCode.OK,
+                Content = "<html><body><a href='https://github.com/winfobh/softplan'>https://github.com/winfobh/softplan</a></html>"};
+        }        
     }
 }
