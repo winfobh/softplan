@@ -28,12 +28,9 @@ namespace softplan.Controllers
     {
 
         [HttpGet]
-        public ContentResult ShowMeTheCode()
+        public string ShowMeTheCode()
         {
-            return new ContentResult {
-                ContentType = "text/html",
-                StatusCode = (int)HttpStatusCode.OK,
-                Content = "<html><body><a href='https://github.com/winfobh/softplan'>https://github.com/winfobh/softplan</a></html>"};
+            return "https://github.com/winfobh/softplan";
         }        
     }
 }
