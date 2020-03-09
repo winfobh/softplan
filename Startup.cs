@@ -1,17 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Http;
 
 
 namespace softplan
@@ -30,20 +25,19 @@ namespace softplan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ToDo API",
+                    Title = "API's Tarefa Softplan",
                     Description = "API Sofplan - por Warlem L. Lima",
-                    TermsOfService = new Uri("https://www.softplan.com.br/"),
+                    TermsOfService = new Uri("https://github.com/winfobh/softplan"),
                     Contact = new OpenApiContact
                     {
                         Name = "Warlem L. Lima",
                         Email = "warlem@winfobh.com.br",
+                        Url = new Uri("hhttps://github.com/winfobh/softplan"),
                     }
                 });
             });
@@ -59,12 +53,12 @@ namespace softplan
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha API V1");
             });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            }            
 
             app.UseHttpsRedirection();
 
@@ -73,7 +67,9 @@ namespace softplan
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
+            {                
+                //Utilização de endpoints simples, uma outra forma de fazer
+                endpoints.MapGet("/", context => context.Response.WriteAsync("Hello Softplan!"));
                 endpoints.MapControllers();
             });
         }
